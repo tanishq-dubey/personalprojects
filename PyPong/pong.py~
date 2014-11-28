@@ -4,6 +4,7 @@
 # All sounds are self made except for the background music which is
 #	taken from "https://soundcloud.com/8bitsongs/man-overboard-montrose-8-bit"
 #	All credit for that song belongs to the respective artist
+# Font used is "UbuntuMono-R.ttf"
 #
 # DESCRIPTION: A simple pong game made to learn pygame and game logic
 #
@@ -167,14 +168,14 @@ def artificalIntelligence(ball, ballDirX, paddleTwo):
 	#If the ball is moving away from the paddle, center the paddle
 	if ballDirX == -1:
 		if paddleTwo.centery < (WINDOWHEIGHT/2):
-			paddleTwo.y += 1
+			paddleTwo.y += 1/2
 		elif paddleTwo.centery > (WINDOWHEIGHT/2):
-			paddleTwo.y -= 1
+			paddleTwo.y -= 1/2
 	elif ballDirX == 1:
 		if paddleTwo.centery < ball.centery:
-			paddleTwo.y += 1
+			paddleTwo.y += 1/2
 		else:
-			paddleTwo.y -= 1
+			paddleTwo.y -= 1/2
 	return paddleTwo
 	
 def artificalIntelligenceOne(ball, ballDirX, paddleTwo):
