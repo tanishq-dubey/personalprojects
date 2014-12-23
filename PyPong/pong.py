@@ -13,7 +13,7 @@
 
 
 #Import pygame and system essentials
-import pygame, sys
+import pygame, sys, random
 from pygame.locals import *
 
 #Frames per seconds that the game will run at
@@ -173,11 +173,14 @@ def artificalIntelligence(ball, ballDirX, paddleTwo):
 			paddleTwo.y -= 1
 	elif ballDirX == 1:
 		if paddleTwo.centery < ball.centery:
-			paddleTwo.y += 1
+			if random.random() < .80:
+				paddleTwo.y += 1
 		else:
-			paddleTwo.y -= 1
+			if random.random() < .80:
+				paddleTwo.y -= 1
 	return paddleTwo
-	
+
+#ONLY FOR AI VS AI	
 def artificalIntelligenceOne(ball, ballDirX, paddleTwo):
 	#If the ball is moving away from the paddle, center the paddle
 	if ballDirX == 1:
